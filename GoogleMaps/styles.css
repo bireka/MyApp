@@ -1,0 +1,11 @@
+#main {
+	height: 900px;
+}
+
+#googleMap {
+	max-width:100%;
+	height:800px;
+	vertical-align: bottom;
+}
+
+

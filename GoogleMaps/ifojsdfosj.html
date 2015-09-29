@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Strict//EN'      
+    'http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd'>      
+<html xmlns="http://www.w3.org/1999/xhtml">      
+    <head>      
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />      
+		<style type="text/css" media="all">@import "/style/Przyklad.css";</style>
+        <title>Przykład</title>      
+		<script src="http://maps.google.com/maps/api/js?sensor=false&language=pl" type="text/javascript"></script>    
+		<style type="text/css">		
+		#wskazowki
+		{
+			font-family: Tahoma;
+			font-size: 11px;
+			height: 350px;
+			width: 300px;
+			overflow: auto;
+		}
+		</style>
+    </head>      
+    <body onload="mapaStart()">      
+		<script type="text/javascript">   
+		<!-- 
+		
+			var mapa; // obiekt globalny
+			var dymek = new google.maps.InfoWindow();
+			
+			// niezbędne elementy do wyznaczenia trasy:
+			var trasa  		 = new google.maps.DirectionsService();
+			var trasa_render = new google.maps.DirectionsRenderer();
+			
+			function mapaStart()  
+			{  
+				var wspolrzedne = new google.maps.LatLng(53.41935400090768,14.58160400390625);
+				var opcjeMapy = {
+					zoom: 10,
+					center: wspolrzedne,
+					mapTypeId: google.maps.MapTypeId.ROADMAP
+				};
+				
+				mapa = new google.maps.Map(document.getElementById("mapka"), opcjeMapy); 			
+				
+				// ustawienie docelowej mapy i kontenera na wskazówki
+				trasa_render.setMap(mapa);
+				trasa_render.setPanel(document.getElementById('wskazowki'));
+			}  
+			
+			function znajdz_wskazowki()
+			{
+				var dane_trasy = 
+				{
+					origin: 'Szczecin',
+					destination: 'Gdańsk',
+					travelMode: google.maps.DirectionsTravelMode.DRIVING
+				};
+				
+				trasa.route(dane_trasy, obsluga_wskazowek);
+			}
+			
+			function obsluga_wskazowek(wynik, status)
+			{
+				if(status != google.maps.DirectionsStatus.OK || !wynik.routes[0])
+				{
+					alert('Wystąpił błąd!');
+					return;
+				}
+				
+				trasa_render.setDirections(wynik);
+			}
+		-->
+		</script>     
+		
+		<table style="border: 0 collapse;">
+			<tr>
+				<td style="width: 410px;">
+					<div id='mapka' style='width: 400px; height: 350px; border: 1px solid black; background: gray;'></div>
+				</td>
+				<td style="width: 300px; border: 1px solid black;" valign="top">
+				<div id="wskazowki">
+				</div>
+				</td>
+			</tr>
+		</table>
+		<input type="button" value="ZNAJDŹ TRASĘ DOJAZDU ZE SZCZECINA DO GDAŃSKA" onclick="znajdz_wskazowki()" />
+		<p id="info">
+			Kliknij na powyższy przycisk aby wyznaczyć trasę dojazdu wraz ze wskazówkami (listą kroków)
+		</p>
+    </body>      
+</html>   
+
+<!--
+Copyright (C) 2007-2013 Poznaj Google Maps API - www.gmapsapi.com
+Informacje o prawach autorskich i dozwolonym sposobie wykorzystania kodu: http://gmapsapi.com/ostronie.html
+-->
