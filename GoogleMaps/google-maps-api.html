@@ -15,11 +15,11 @@
 	
 </head>
 
-<body>
+<body onload="initialize_map()">
 
-<!--
+
 <script type="text/javascript">
-	var mapa; // obiekt globalny
+	var map; // obiekt globalny
 
 	// niezbędne elementy do wyznaczenia trasy:
 	var trasa  		 = new google.maps.DirectionsService();
@@ -34,10 +34,10 @@
 			mapTypeId: google.maps.MapTypeId.ROADMAP
 		};
 	
-		mapa = new google.maps.Map(document.getElementById("googleMap"), opcjeMapy); 			
+		map = new google.maps.Map(document.getElementById("googleMap"), opcjeMapy); 			
 	
 		// ustawienie docelowej mapy i kontenera na wskazówki
-		trasa_render.setMap(mapa);
+		trasa_render.setMap(map);
 		trasa_render.setPanel(document.getElementById('wskazowki'));
 	}  
 
@@ -64,11 +64,11 @@
 		trasa_render.setDirections(wynik);
 	}
 </script>
--->
 
+<!--
 <script src="initialize_map.js"></script>
 <script src="trasa.js"></script>
-
+-->
 
 <div class="container-fluid" id="main">
 	<div class="row" id="barrow">
