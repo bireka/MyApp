@@ -9,10 +9,7 @@
 
 	<script src="http://maps.googleapis.com/maps/api/js?sensor=false&language=pl"></script>
 
-	<link rel="stylesheet" type="text/css" href="styles.css">
-	
-	
-	
+	<link rel="stylesheet" type="text/css" href="styles.css">	
 </head>
 
 
@@ -20,7 +17,6 @@
 <body>
 
 <script src="initialize_map.js"></script>
-<script src="trasa.js"></script>
 
 <div class="container-fluid" id="main">
 	<div class="row" id="barrow">
@@ -93,12 +89,13 @@
 			</div>
 
 			<button type="submit" class="btn btn-primary" id="search-btn">Szukaj</button>
-			<button type="button" class="btn btn-success" id="go-btn" onclick="znajdz_wskazowki()">Dojazd</button>
+			<button type="button" class="btn btn-success" id="go-btn">Dojazd</button>
 		</div>
 		<div class="col-sm-10" id="googleMap"></div>
 	</div>
 	</div>
 
+<script src="trasa.js"></script>
 <script src="search.js"></script>
 
 </body>

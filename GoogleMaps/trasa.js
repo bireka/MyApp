@@ -1,5 +1,3 @@
-//document.getElementById("go-btn").addEventListener("click", znajdz_wskazowki);
-
 function znajdz_wskazowki()
 	{
 		var dane_trasy = 
@@ -23,3 +21,4 @@ function znajdz_wskazowki()
 		trasa_render.setDirections(wynik);
 	}
 
+document.getElementById("go-btn").addEventListener("click", znajdz_wskazowki);
