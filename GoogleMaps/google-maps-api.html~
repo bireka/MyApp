@@ -15,60 +15,19 @@
 	
 </head>
 
-<body onclick="initialize_map()">
+<!--
+<body onload="initialize_map()">
+-->
 
-
-<script type="text/javascript">
-	var map; // obiekt globalny
-
-	// niezbędne elementy do wyznaczenia trasy:
-	var trasa  		 = new google.maps.DirectionsService();
-	var trasa_render = new google.maps.DirectionsRenderer();
-
-	function initialize_map()  
-	{  
-		var wspolrzedne = new google.maps.LatLng(53.41935400090768,14.58160400390625);
-		var opcjeMapy = {
-			zoom: 10,
-			center: wspolrzedne,
-			mapTypeId: google.maps.MapTypeId.ROADMAP
-		};
-	
-		map = new google.maps.Map(document.getElementById("googleMap"), opcjeMapy); 			
-	
-		// ustawienie docelowej mapy i kontenera na wskazówki
-		trasa_render.setMap(map);
-		trasa_render.setPanel(document.getElementById('wskazowki'));
-	}  
-
-	function znajdz_wskazowki()
-	{
-		var dane_trasy = 
-		{
-			origin: 'Szczecin',
-			destination: 'Gdańsk',
-			travelMode: google.maps.DirectionsTravelMode.DRIVING
-		};
-	
-		trasa.route(dane_trasy, obsluga_wskazowek);
-	}
-
-	function obsluga_wskazowek(wynik, status)
-	{
-		if(status != google.maps.DirectionsStatus.OK || !wynik.routes[0])
-		{
-			alert('Wystąpił błąd!');
-			return;
-		}
-	
-		trasa_render.setDirections(wynik);
-	}
-</script>
+<body>
 
 <!--
-<script src="initialize_map.js"></script>
-<script src="trasa.js"></script>
+<script src="init.js"></script>
 -->
+<script src="initialize_map.js"></script>
+
+<script src="trasa.js"></script>
+
 
 <div class="container-fluid" id="main">
 	<div class="row" id="barrow">

@@ -1,5 +1,5 @@
 var myCenter = new google.maps.LatLng(52.229824,21.011753);
-var map
+var map;
 // niezbędne elementy do wyznaczenia trasy:
 var trasa  		 = new google.maps.DirectionsService();
 var trasa_render = new google.maps.DirectionsRenderer();

@@ -1,4 +1,4 @@
-document.getElementById("go-btn").addEventListener("click", znajdz_wskazowki);
+//document.getElementById("go-btn").addEventListener("click", znajdz_wskazowki);
 
 function znajdz_wskazowki()
 {
