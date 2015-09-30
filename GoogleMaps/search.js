@@ -1,9 +1,10 @@
 document.getElementById("search-btn").addEventListener("click", displayName);
 
+
 var geokoder = new google.maps.Geocoder();
 //var wskaznik = new google.maps.Marker({icon: ikona, shadow: cien});
 var marker = new google.maps.Marker({});
-
+var infoWindow = new google.maps.InfoWindow();
 
 
 function displayName() {
@@ -11,6 +12,8 @@ function displayName() {
     var name     = document.getElementById("name").value
 	var street   = document.getElementById("street").value
 	var distance = document.getElementById("distance").value
+
+	var infowindow = new google.maps.InfoWindow();
 
 	skoczDoAdresu(location)
 }
@@ -26,8 +29,8 @@ function skoczDoAdresu(adres)
 				map.setCenter(wyniki[0].geometry.location);
 				marker.setPosition(wyniki[0].geometry.location);
 				marker.setMap(map); // pokazujemy go ponownie
-				//dymek.open(mapa, wskaznik); // dymek ze znalezionym adresem
-				//dymek.setContent('<strong>Poszukiwany adres</strong><br />'+adres);
+				infoWindow.open(map, marker); // dymek ze znalezionym adresem
+				infoWindow.setContent('<strong>Poszukiwany adres</strong><br />'+adres);
 			}
 			else
 			{
@@ -35,3 +38,5 @@ function skoczDoAdresu(adres)
 			}
 		});
 }
+
+

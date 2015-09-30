@@ -1,0 +1,33 @@
+{
+    "places": {
+        "colnames": [
+				"id",
+		        "name",
+		        "adress",
+		        "type"
+        ],
+        "coltypes": [
+				"integer primary key",
+		        "text",
+		        "text",
+		        "text"
+        ],
+        "values": [
+		        [	
+		            "Kozak Bar",
+		            "Warszawa, Zajączka 27",
+		            "Bar"
+		        ],
+		        [
+		            "Cafe Melanż",
+		            "Warszawa, Wąwozowa 6",
+		            "Pub"
+		        ],
+		        [
+		            "Melo",
+		            "Warszawa, Marszałkowska 5",
+		            "Klub"
+		        ]
+        ]
+    }
+}

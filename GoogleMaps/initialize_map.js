@@ -5,6 +5,7 @@ var trasa  		 = new google.maps.DirectionsService();
 var trasa_render = new google.maps.DirectionsRenderer();
 
 
+
 function initialize_map() {
 	var mapProp = {
 		center:myCenter,
